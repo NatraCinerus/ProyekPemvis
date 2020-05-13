@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_username = new System.Windows.Forms.TextBox();
+            this.tb_password = new System.Windows.Forms.TextBox();
             this.btn_daftar = new System.Windows.Forms.Button();
             this.btn_login = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -67,19 +67,19 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Password";
             // 
-            // textBox1
+            // tb_username
             // 
-            this.textBox1.Location = new System.Drawing.Point(207, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.tb_username.Location = new System.Drawing.Point(207, 100);
+            this.tb_username.Name = "tb_username";
+            this.tb_username.Size = new System.Drawing.Size(100, 20);
+            this.tb_username.TabIndex = 3;
             // 
-            // textBox2
+            // tb_password
             // 
-            this.textBox2.Location = new System.Drawing.Point(207, 137);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.tb_password.Location = new System.Drawing.Point(207, 137);
+            this.tb_password.Name = "tb_password";
+            this.tb_password.Size = new System.Drawing.Size(100, 20);
+            this.tb_password.TabIndex = 4;
             // 
             // btn_daftar
             // 
@@ -107,8 +107,8 @@
             this.ClientSize = new System.Drawing.Size(404, 300);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.btn_daftar);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_password);
+            this.Controls.Add(this.tb_username);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -124,8 +124,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_username;
+        private System.Windows.Forms.TextBox tb_password;
         private System.Windows.Forms.Button btn_daftar;
         private System.Windows.Forms.Button btn_login;
     }
