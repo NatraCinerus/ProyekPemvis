@@ -89,6 +89,7 @@
             this.btn_daftar.TabIndex = 5;
             this.btn_daftar.Text = "Daftar";
             this.btn_daftar.UseVisualStyleBackColor = true;
+            this.btn_daftar.Click += new System.EventHandler(this.btn_daftar_Click);
             // 
             // btn_login
             // 
@@ -114,6 +115,7 @@
             this.Controls.Add(this.label1);
             this.Name = "form_login";
             this.Text = "Form Login";
+            this.Load += new System.EventHandler(this.form_login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

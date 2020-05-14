@@ -15,3 +15,23 @@ C:\Users\bayud\source\repos\ProjectAkhirPemvis\ProjectAkhirPemvis\obj\Debug\Proj
 C:\Users\bayud\source\repos\ProjectAkhirPemvis\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.csproj.CopyComplete
 C:\Users\bayud\source\repos\ProjectAkhirPemvis\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.exe
 C:\Users\bayud\source\repos\ProjectAkhirPemvis\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.pdb
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\bin\Debug\ProjectAkhirPemvis.exe.config
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\bin\Debug\ProjectAkhirPemvis.exe
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\bin\Debug\ProjectAkhirPemvis.pdb
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\bin\Debug\MySql.Data.dll
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\bin\Debug\Google.Protobuf.dll
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\bin\Debug\BouncyCastle.Crypto.dll
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\bin\Debug\Ubiety.Dns.Core.dll
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\bin\Debug\Renci.SshNet.dll
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\bin\Debug\MySql.Data.xml
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.csprojAssemblyReference.cache
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.form_login.resources
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.Form2.resources
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.form_admin.resources
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.Properties.Resources.resources
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.csproj.GenerateResource.cache
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.csproj.CopyComplete
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.exe
+D:\Installed\PemVis App\ProyekPemvis-develop\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.pdb
+C:\Users\bayud\source\repos\ProjectAkhirPemvis\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.Form2.resources
+C:\Users\bayud\source\repos\ProjectAkhirPemvis\ProjectAkhirPemvis\obj\Debug\ProjectAkhirPemvis.Form_User.resources

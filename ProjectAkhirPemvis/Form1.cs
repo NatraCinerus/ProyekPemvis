@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ProjectAkhirPemvis
 {
     public partial class form_login : Form
@@ -27,6 +28,7 @@ namespace ProjectAkhirPemvis
         {
             String username = tb_username.Text;
             String password = tb_password.Text;
+            String level = "";
 
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = SERVER;
@@ -37,6 +39,7 @@ namespace ProjectAkhirPemvis
             String connString = builder.ToString();
 
             dbConn = new MySqlConnection(connString);
+
 
             if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
             {
@@ -51,21 +54,38 @@ namespace ProjectAkhirPemvis
 
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows)
+                while (reader.Read())
                 {
-                    MessageBox.Show("Login Berhasil");
-                    dbConn.Close();
-                    Form frm_admin = new form_admin(username);
-                    frm_admin.Show();
-                    this.Hide();
+                   level = reader.GetString("level");
+                    if (level == "admin")
+                    {
+                        MessageBox.Show("Login Berhasil");
+                        Form frm_admin = new form_admin(username, this);
+                        frm_admin.Show();
+                    }
+                    else if (level == "user")
+                    {
+                        MessageBox.Show("Login Berhasil");
+                        Form frm_user = new Form_User(username, this);
+                        frm_user.Show();
+                        //this.Hide();
+                    }
+
                 }
-                else
-                {
-                    MessageBox.Show("Login Gagal");
-                    dbConn.Close();
-                }
+                dbConn.Close();
 
             }
+        }
+
+        private void form_login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_daftar_Click(object sender, EventArgs e)
+        {
+            Form2 frm2 = new Form2(this);
+            frm2.ShowDialog();
         }
     }
 }

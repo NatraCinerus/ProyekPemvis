@@ -18,22 +18,32 @@ namespace ProjectAkhirPemvis
         private const String UID = "root";
         private const String PASSWORD = "12345678";
         private static MySqlConnection dbConn;
-        private form_login frm_login;
+        private Form frm_login;
         MySqlConnection koneksi = new MySqlConnection("server=127.0.0.1;database=db_pemvis;uid=root;pwd=12345678");
         public form_admin()
         {
             InitializeComponent();
         }
 
-        public form_admin(string username)
+        public form_admin(string username, Form frm1)
         {
             InitializeComponent();
             lbl_username.Text = username;
-            this.Owner = frm_login;
+            this.Owner = frm1;
+            frm_login = frm1;
         }
 
         private void btn_simpan_Click(object sender, EventArgs e)
         {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = SERVER;
+            builder.Database = DATABASE;
+            builder.UserID = UID;
+            builder.Password = PASSWORD;
+            String connString = builder.ToString();
+
+            dbConn = new MySqlConnection(connString);
+
             String isbn = tb_isbn.Text;
             String judul = tb_judul.Text;
             String pengarang = tb_pengarang.Text;
@@ -45,16 +55,17 @@ namespace ProjectAkhirPemvis
             }
             else
             {
+                dbConn.Open();
                 String query = string.Format("INSERT INTO buku(isbn, judul, pengarang, harga) VALUES('{0}','{1}','{2}','{3}')", isbn, judul, pengarang, harga);
                 MySqlCommand cmd = new MySqlCommand(query, dbConn);
-                dbConn.Open();
+                
                 cmd.ExecuteNonQuery();
                 dbConn.Close();
                 MessageBox.Show("Buku Berhasil Ditambahkan");
             }
         }
 
-        public void lihatdata()
+        public void lihatdataBuku()
         {
             MySqlCommand cmd;
             cmd = koneksi.CreateCommand();
@@ -65,9 +76,20 @@ namespace ProjectAkhirPemvis
             dataGridView1.DataSource = ds.Tables[0].DefaultView;
         }
 
+        public void lihatdataTransaksi()
+        {
+            MySqlCommand cmd;
+            cmd = koneksi.CreateCommand();
+            cmd.CommandText = "SELECT * FROM transaksi";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            dataGridView2.DataSource = ds.Tables[0].DefaultView;
+        }
+
         private void btn_refresh_Click(object sender, EventArgs e)
         {
-            lihatdata();
+            lihatdataBuku();
         }
 
         private void btn_get_Click(object sender, EventArgs e)
@@ -168,6 +190,54 @@ namespace ProjectAkhirPemvis
                     cmd.ExecuteNonQuery();
                     dbConn.Close();
                 }
+            }
+        }
+
+        private void form_admin_Load(object sender, EventArgs e)
+        {
+            lihatdataBuku();
+            lihatdataTransaksi();
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            tb_isbn.Text = "";
+            tb_judul.Text = "";
+            tb_pengarang.Text = "";
+            tb_harga.Text = "";
+        }
+
+        private void btn_refresh_trans_Click(object sender, EventArgs e)
+        {
+            lihatdataTransaksi();
+        }
+
+        private void btn_lunas_Click(object sender, EventArgs e)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = SERVER;
+            builder.Database = DATABASE;
+            builder.UserID = UID;
+            builder.Password = PASSWORD;
+            String connString = builder.ToString();
+
+            dbConn = new MySqlConnection(connString);
+
+            string username = tb_username.Text;
+            MessageBox.Show(username);
+            if (String.IsNullOrEmpty(username))
+            {
+                MessageBox.Show("Username kosong");
+                return;
+            }
+            else
+            {
+                String query = string.Format("UPDATE transaksi SET status = 'lunas' WHERE username = '{0}'", username);
+                MySqlCommand cmd = new MySqlCommand(query, dbConn);
+                dbConn.Open();
+                cmd.ExecuteNonQuery();
+                dbConn.Close();
+                MessageBox.Show("Data berhasil diubah");
             }
         }
     }

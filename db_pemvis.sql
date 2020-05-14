@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2020 at 11:48 AM
+-- Generation Time: May 14, 2020 at 10:09 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -40,9 +40,38 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`isbn`, `judul`, `pengarang`, `harga`) VALUES
-(1, 'dbd', 'dbd', '1111'),
-(2, 'asd', 'asd', '123'),
-(3, 'dbd', 'dbd', '1111');
+(1, 'dbd', 'dbd', '111'),
+(2, 'asd', 'asd', '222'),
+(3, 'pemvis', 'pemvis', '333'),
+(4, 'pemweb', 'pemweb', '444'),
+(5, 'pemlan', 'pemlan', '555'),
+(6, 'pemdas', 'pemdas', '666');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaksi`
+--
+
+CREATE TABLE `transaksi` (
+  `id_transaksi` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `isbn` varchar(50) NOT NULL,
+  `judul` varchar(50) NOT NULL,
+  `harga` varchar(50) NOT NULL,
+  `jml` varchar(50) NOT NULL,
+  `total_harga` varchar(50) NOT NULL,
+  `total_belanja` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_transaksi`, `username`, `isbn`, `judul`, `harga`, `jml`, `total_harga`, `total_belanja`, `status`) VALUES
+(7, 'user', '1', 'dbd', '2', '111', '222', '222', 'lunas'),
+(8, 'user', '1', 'dbd', '2', '111', '222', '222', 'lunas');
 
 -- --------------------------------------------------------
 
@@ -63,7 +92,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
 (1, 'admin', 'admin', 'admin'),
-(2, 'user', 'user', 'user');
+(2, 'user', 'user', 'user'),
+(3, 'test', '123', ''),
+(4, 'asd', 'asd', 'user');
 
 --
 -- Indexes for dumped tables
@@ -74,6 +105,12 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`isbn`);
+
+--
+-- Indexes for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD PRIMARY KEY (`id_transaksi`);
 
 --
 -- Indexes for table `user`
@@ -89,13 +126,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `isbn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `isbn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
